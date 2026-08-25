@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PixelPulse - Next-Gen Stock Photography Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header class="app-header">
+    <div class="logo">Pixel<span>Pulse</span></div>
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search millions of HD photos (e.g. Architecture, Tech)...">
+      <button id="searchBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Category Pills -->
+  <nav class="categories-bar">
+    <button class="category-pill active" data-query="Nature">🍃 Nature</button>
+    <button class="category-pill" data-query="Technology">💻 Technology</button>
+    <button class="category-pill" data-query="Architecture">🏛️ Architecture</button>
+    <button class="category-pill" data-query="Wallpapers">🎨 Wallpapers</button>
+    <button class="category-pill" data-query="Minimal">✨ Minimal</button>
+  </nav>
+
+  <!-- Main Gallery Grid -->
+  <main>
+    <div id="galleryGrid" class="gallery-grid"></div>
+    <div id="loadingIndicator" class="loading-status"></div>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="imageModal" class="modal">
+    <div class="modal-card">
+      <button class="close-btn" id="closeModal">&times;</button>
+      <div class="modal-body">
+        <div class="modal-img-container">
+          <img id="modalImg" src="" alt="Expanded View">
+        </div>
+        <div class="modal-sidebar">
+          <div class="photographer-profile">
+            <img id="photographerAvatar" src="" alt="Photographer">
+            <div>
+              <h3 id="photographerName">Photographer</h3>
+              <p id="photographerUsername">@username</p>
+            </div>
+          </div>
+          <div class="image-stats">
+            <div class="stat-box">
+              <span class="stat-title">Likes</span>
+              <span id="modalLikes" class="stat-value">0</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-title">Dimensions</span>
+              <span id="modalDimensions" class="stat-value">HD</span>
+            </div>
+          </div>
+          <button id="downloadBtn" class="download-action-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download HD Image
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
